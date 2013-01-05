@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Cats and Foots</title>
+    <link href="/media/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+    <link href="/media/css/index.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="/media/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-meat row"></div>
+
+        <div class="div-logo row" >
+            <img src="../media/images/logo.png" height="64px">
+        </div>
+        <div class="div-logo-shadow row"></div>
+
+        <div class="row" style="height: 540px;">
+            <div class="span12">
+                <h2>
+                    Потребление кошаками
+                </h2>
+                <div class="row">
+                    <div class="span7">
+
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                            <tr style="background: #F2F5FB;">
+                                <th>#</th>
+                                <th>Имя</th>
+                                <th>Возраст</th>
+                                <th>Сумма затратов в месяц</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            {% for cat in cats_data %}
+                            <tr>
+                                <td class="result-row">1</td>
+                                <td class="result-row">{{ cat.name }}</td>
+                                <td class="result-row">{{ cat.age }} мес</td>
+                                <td class="result-row">{{ cat.billingOut }}р</td>
+                            </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="footer"></div>
+    </div>
+
+
+</body>
+
+</html>

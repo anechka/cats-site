@@ -1,0 +1,33 @@
+/* 007D30 00CA4E CA0B00 FF2619 F6F9FF */
+BODY {
+    background-color: #444444;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+}
+
+.div-logo {
+    color: #FFF;
+    background: url("../images/gradient-top.png");
+    height: 64px;
+}
+.div-logo-shadow {
+    background: url("../images/logo-shadow.png");
+    height: 12px;
+    
+}
+
+.header-meat {
+    background-color: #FF190C;
+    height: 4px;
+}
+
+.footer {
+    background-color: #010E08;
+    height: 22px;
+}
+.result-row {
+    text-align: center;
+}
