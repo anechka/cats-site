@@ -38,10 +38,10 @@
 
                             {% for cat in cats_data %}
                             <tr>
-                                <td class="result-row">1</td>
+                                <td class="result-row">{{ cat.id }}</td>
                                 <td class="result-row">{{ cat.name }}</td>
                                 <td class="result-row">{{ cat.age }} мес</td>
-                                <td class="result-row">{{ cat.billingOut }}р</td>
+                                <td class="result-row">{{ cat.bill_in_day }}р</td>
                             </tr>
                             {% endfor %}
 
