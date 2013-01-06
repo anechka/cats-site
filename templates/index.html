@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <title>Cats and Foots</title>
-    <link href="/media/css/bootstrap.css" type="text/css" rel="stylesheet"/>
-    <link href="/media/css/index.css" type="text/css" rel="stylesheet"/>
-    <script type="text/javascript" src="/media/js/bootstrap.min.js"></script>
+    <link href="{{ STATIC_URL }}css/bootstrap.css" type="text/css" rel="stylesheet"/>
+    <link href="{{ STATIC_URL }}css/index.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -13,7 +13,7 @@
         <div class="header-meat row"></div>
 
         <div class="div-logo row" >
-            <img src="../media/images/logo.png" height="64px">
+            <img src="{{ STATIC_URL }}images/logo.png" height="64px">
         </div>
         <div class="div-logo-shadow row"></div>
 
