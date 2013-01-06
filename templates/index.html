@@ -8,48 +8,21 @@
 
 
     <script type="text/javascript" src="{{ STATIC_URL }}js/plates.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/menangen.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/coffee-script.js"></script>
 
-    <script type="text/javascript">
+    <script type="text/coffeescript" src="{{ STATIC_URL }}js/menangen.coffee"></script>
 
-
-        startup = function() {
-
-            var collection = [
-                {% for cat in cats_data %}
-                {'cat.id': {{ cat.id }}, 'cat.name': '{{ cat.name }}', 'cat.age': {{ cat.age }}, 'cat.bill_in_day': {{ cat.bill_in_day }}},
-                {% endfor %}
-
-            ];
-
-
-
-            collection = collection.map(testingMonthes);
-
-//            {% for cat in cats_data %}
-//
-//            {{ cat.id }}
-//            {{ cat.name }}
-//            {{ cat.age }}
-//            {{ cat.bill_in_day }}
-//
-//            {% endfor %}
-
-
-            var htmlBind = catsDataObject.innerHTML;
-
-//            console.log("****");
-//            console.log(htmlBind);
-
-
-            var htmlResultProcessing = Plates.bind(htmlBind, collection);
-
-
-            catsDataObject.innerHTML = htmlResultProcessing;
-
-
-        }
+    <script type="text/coffeescript">
+        window.collection = [
+            {% for cat in cats_data %}
+            "cat.id": {{ cat.id }}
+            "cat.name": '{{ cat.name }}'
+            "cat.age": {{ cat.age }}
+            "cat.bill_in_day": {{ cat.bill_in_day }}
+        ,   {% endfor %}
+        ]
     </script>
+
 </head>
 
 <body onload="startup()">
