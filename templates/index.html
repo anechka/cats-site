@@ -5,10 +5,54 @@
     <title>Cats and Foots</title>
     <link href="{{ STATIC_URL }}css/bootstrap.css" type="text/css" rel="stylesheet"/>
     <link href="{{ STATIC_URL }}css/index.css" type="text/css" rel="stylesheet"/>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript" src="{{ STATIC_URL }}js/plates.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/menangen.js"></script>
+
+    <script type="text/javascript">
+
+
+        startup = function() {
+
+            var collection = [
+                {% for cat in cats_data %}
+                {'cat.id': {{ cat.id }}, 'cat.name': '{{ cat.name }}', 'cat.age': {{ cat.age }}, 'cat.bill_in_day': {{ cat.bill_in_day }}},
+                {% endfor %}
+
+            ];
+
+
+
+            collection = collection.map(testingMonthes);
+
+//            {% for cat in cats_data %}
+//
+//            {{ cat.id }}
+//            {{ cat.name }}
+//            {{ cat.age }}
+//            {{ cat.bill_in_day }}
+//
+//            {% endfor %}
+
+
+            var htmlBind = catsDataObject.innerHTML;
+
+//            console.log("****");
+//            console.log(htmlBind);
+
+
+            var htmlResultProcessing = Plates.bind(htmlBind, collection);
+
+
+            catsDataObject.innerHTML = htmlResultProcessing;
+
+
+        }
+    </script>
 </head>
 
-<body>
+<body onload="startup()">
     <div class="container">
         <div class="header-meat row"></div>
 
@@ -34,16 +78,16 @@
                                 <th>Сумма затратов в месяц</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="catsDataObject">
 
-                            {% for cat in cats_data %}
-                            <tr>
-                                <td class="result-row">{{ cat.id }}</td>
-                                <td class="result-row">{{ cat.name }}</td>
-                                <td class="result-row">{{ cat.age }} мес</td>
-                                <td class="result-row">{{ cat.bill_in_day }}р</td>
+
+                            <tr class="classResultRows">
+                                <td class="cat.id"></td>
+                                <td class="cat.name"></td>
+                                <td class="cat.age"></td>
+                                <td class="cat.bill_in_day"></td>
                             </tr>
-                            {% endfor %}
+
 
                             </tbody>
                         </table>
