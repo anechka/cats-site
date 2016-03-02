@@ -65,7 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                "django.template.context_processors.static" # Remove on production and run "collect" static files
+                "django.template.context_processors.static"  # Remove on production and run "collect" static files
             ],
         },
     },
@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'catssite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'billing/cats-billing.sqlite'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'catssite',
+        'USER': 'catadmin',
+        'PASSWORD': '1234',
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
     }
 }
 
